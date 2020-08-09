@@ -1,11 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
+import React, { Component, createContext } from 'react'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
+// import Home from './components/home'
+import Header from './components/header'
+import './App.css'
+import axios from 'axios'
+
+export const TheContext = createContext({
+  user: {},
+  logout: () => {},
+})
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       users: []
     }
@@ -14,28 +21,31 @@ class App extends Component {
   componentDidMount () {
     axios.get('/api/users')
     .then((response) => {
-      console.log(response.data);
-      this.setState({ users: response.data });
+      console.log(response.data)
+      this.setState({ users: response.data })
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err))
   }
   
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Holy smokes React plus Docker!
-          </p>
-          {
-            this.state.users.map((user,index) => (
-              <p key={index}>{index + 1}. {user}</p>
-            ))
-          }
-        </header>
-      </div>
-    );
+      <TheContext.Provider value={this.state}>
+        <Router>
+          <Header />
+          <Route
+            path='/'
+            exact
+            component={Header} 
+          />
+          {/* <Route
+            path='/resume'
+            exact
+            component={} 
+          /> */}
+          {/* <Footer /> */}
+        </Router>
+      </TheContext.Provider>
+    )
   }
 }
 
