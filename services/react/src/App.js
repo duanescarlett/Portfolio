@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Header from './components/header'
 import './App.css'
 import axios from 'axios'
+import Home from './components/home'
+import Footer from './components/footer'
 
 export const TheContext = createContext({
   user: {},
@@ -35,18 +37,13 @@ class App extends Component {
           <Route
             path='/'
             exact
-            component={Header} 
+            component={Home} 
           />
-          {/* <Route
-            path='/resume'
-            exact
-            component={} 
-          /> */}
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </TheContext.Provider>
     )
   }
 }
 
-export default App;
+export default App

@@ -6,34 +6,17 @@ const Header = () => {
     return(
         <React.Fragment>
 
-            <header>
-                <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-                    <a class="navbar-brand" href="/">
-                        <img src='' title="This is the logo" alt="logo" width="100" height="50" />
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                            <a 
-                                class="nav-link" 
-                                href="/dashboard" 
-                                id="dashboard"
-                                tabindex="-1" 
-                                aria-disabled="true"
-                                >
-                                    Dashboard
-                                </a>
-                            </li>
-                        </ul>
-                        <form class="form-inline mt-2 mt-md-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </div>
-                </nav>
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Duane Scarlett</h3>
+                    {/* <code class="leftJustifyDiv">Fullstack Javascript Blockchain Developer</code> */}
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="#">Contact</a>
+                    </nav>
+                </div>
+                
             </header>
 
         </React.Fragment>
