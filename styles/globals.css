@@ -5,7 +5,7 @@
 @layer base  {
   body {
     @apply
-    bg-sky-900
+    bg-indigo-950
     text-sky-200
   }
 }
@@ -17,8 +17,8 @@
     rounded
     border-2
     border-sky-200
-    hover:border-sky-600 
-    hover:text-sky-600
+    hover:border-teal-300
+    hover:text-teal-300
   }
 }
 

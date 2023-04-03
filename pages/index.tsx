@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import Image from 'next/image'
+import Navbar from '@/components/Navbar'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,23 +16,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=''>
+        <section className='nav'>
+          <Navbar />
+        </section>
         <section className='flex w-screen h-screen'>
-          <div className='flex justify-center w-2/3 mx-auto my-auto'>
+          <div className='flex justify-center w-2/3 mx-auto my-auto mt-64'>
             <div className='flex flex-col'>
               <div className='flex w-full'>
-                <h1 className='font-mono font-semibold text-7xl'>Duane Scarlett</h1>
+                <h1 className='font-mono font-semibold text-4xl md:text-7xl text-center'>Duane Scarlett</h1>
               </div>
+              
               <div className='flex w-full'>
-                <code className='ml-4 font-semibold text-teal-300'>React | Node | DevOps | Blockchain | Solidity | Full-Stack</code>
+                <code className='md:ml-4 font-semibold text-sm md:text-base text-teal-300 text-center'>React | Node | DevOps | Blockchain | Solidity | Full-Stack</code>
               </div>
             </div>
           </div>
         </section>
         <section className='flex w-screen h-screen'>
-          <div className='flex justify-center w-2/3 mx-auto my-auto'>
+          <div className='flex justify-center w-2/3 mx-auto my-40'>
             <div className='flex flex-col'>
               <div className='flex justify-start'>
-                <h1 className='font-mono font-semibold text-7xl'>Who am I?</h1>
+                <h1 className='font-mono font-semibold text-5xl'>Who am I?</h1>
+              </div>
+              <div className='flex justify-start'>
+                <h3 className='font-mono font-semibold text-xl md:text-xl'>
+                  <i>Persistence is my strong suit</i>
+                </h3>
               </div>
               <div className='flex w-2/3 justify-center'>
                 <code className='flex flex-col text-xl'>
@@ -42,6 +53,12 @@ export default function Home() {
                     Software Engineer. Currently I am particularly fond 
                     of bringing Blockchain solutions to business development.
                   </p>
+                  <h1>Development Skills</h1>
+                  <div className='flex justify-between w-full'>
+                    <div className='flex flex-col justify-start'>Front End</div>
+                    <div className='flex flex-col justify-start'>DevOps</div>
+                    <div className='flex flex-col justify-start'>Backend</div>
+                  </div>
                   <button className='flex justify-slef-start mt-10 w-[180px] px-auto text-center'>
                     Let's Connect
                   </button>
